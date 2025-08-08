@@ -1,0 +1,24 @@
+@import "tailwindcss";
+#root {
+  height:100%
+}
+body{
+  background-color: black;
+}
+/* body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #1A1C22,
+    #2E303A,
+    #5A5C6A,
+    #7F818E,
+    #7F818E,
+    #5A5C6A,
+    #2E303A,
+    #1A1C22
+  );
+} */
+
+
