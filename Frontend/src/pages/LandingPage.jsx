@@ -157,7 +157,11 @@ export default function LandingPage() {
               <p className="text-[#9ca3af] mt-2">Join WellNest and start a simple, private journey to better wellness.</p>
             </div>
             <div className="flex gap-4">
-              <a href="#" className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#06b6d4] to-[#7c3aed] text-black rounded-full font-semibold shadow-lg">Get Started</a>
+              <a 
+              onClick ={() => {
+                navigate('/signup');
+              }}
+               className="cursor-pointer inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#06b6d4] to-[#7c3aed] text-black rounded-full font-semibold shadow-lg">Get Started</a>
               <a href="#about" className="inline-flex items-center px-6 py-3 border border-white/10 rounded-full text-sm">Learn more</a>
             </div>
           </motion.div>
