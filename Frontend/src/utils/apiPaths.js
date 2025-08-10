@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:3000/api/v1";
+export const BASE_URL = "https://wellnest-77cu.onrender.com/api/v1";
 
 export const API_PATHS = {
     AUTH: {
