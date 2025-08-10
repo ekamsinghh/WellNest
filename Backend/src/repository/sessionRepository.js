@@ -1,4 +1,4 @@
-const Session = require('../Models/Session');
+const Session = require('../models/Session');
 const mongoose = require('mongoose');
 class SessionRepository{
     constructor(){
