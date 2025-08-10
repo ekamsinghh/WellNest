@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const User = require('../Models/User');
+const User = require('../models/User');
 const { JWT_SECRET } = require('../config/index');
 
 const protect = async (req, res, next) => {
