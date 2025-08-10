@@ -24,11 +24,16 @@ It helps streamline the process of managing wellness events with a clean and int
 
 ## 📦 Installation & Setup
 
-### 1️⃣ Clone the repository
+### Clone the repository
 ```bash
 git clone https://github.com/ekamsinghh/WellNest.git
 cd WellNest
 ```
+### Create the .env file in root folder
+- MONGO_URI = {your_mongodb_connection_string}
+- PORT = 3000
+- JWT_SECRET = {your_secret_key}
+
 ### Backend
 ```bash
 npm start
