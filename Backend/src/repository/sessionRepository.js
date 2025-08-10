@@ -1,5 +1,5 @@
 const Session = require('../Models/Session');
-
+const mongoose = require('mongoose');
 class SessionRepository{
     constructor(){
         this.session = Session;
@@ -15,6 +15,17 @@ class SessionRepository{
         }
     }
 
+    async toggle(data){
+        try{
+            const response = await this.session.findOneAndUpdate({ _id: data.id },{ 
+                status: data.status
+             }, { new: true });
+            return response;
+        }
+        catch(err){
+            throw err;
+        }
+    }
     async getSessionById(id){
         try{
             const session = await this.session.findById(id);
@@ -39,6 +50,18 @@ class SessionRepository{
         }
     }
 
+    async getPublishedSessions(userId){
+        try{
+            const response = await this.session
+                .find({ user: userId, status: "published" })
+                .sort({ createdAt: -1 });
+            // Sorting will be done based on the createdAt field but in descending order
+            return response;
+        }
+        catch(err){
+            throw err;
+        }
+    }
     async getMySessions(userId){
         try{
             const response = await this.session.find({user:userId}).sort({createdAt:-1});

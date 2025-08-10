@@ -21,6 +21,15 @@ class SessionService{
         }
     }
 
+    async toggle(data){
+        try{
+            const response = await this.sessionRepository.toggle(data);
+            return response;
+        }
+        catch(err){
+            throw err;
+        }
+    }
     async getSessionById(id){
         try{
             const session = await this.sessionRepository.getSessionById(id);
@@ -42,6 +51,16 @@ class SessionService{
             }
             const response = await this.sessionRepository.deleteSession(sessionId);
             return response;
+        }
+        catch(err){
+            throw err;
+        }
+    }
+
+    async getPublishedSessions(userId){
+        try{
+            const sessions = await this.sessionRepository.getPublishedSessions(userId);
+            return sessions;
         }
         catch(err){
             throw err;

@@ -25,6 +25,30 @@ const createSession = async (req,res) => {
     }
 }
 
+const toggle = async (req,res) => {
+    try{
+        const data={
+            ...req.body,
+            user: req.user.id
+        };
+        const session = await sessionService.toggle(data);
+        return res.status(200).json({
+            message: "Status toggled Successfully",
+            data: session,
+            success: true,
+            error: {}
+        });
+    }
+    catch(err){
+        return res.status(500).json({
+            message: "Internal Server Error",
+            data:{},
+            success: false,
+            error: {}
+        });
+    }
+}
+
 const getSessionById = async (req,res) => {
     try{
         const session = await sessionService.getSessionById(req.params.id);
@@ -106,10 +130,32 @@ const getMySessions = async (req,res) => {
         });
     }
 }
+const getPublishedSessions =async (req,res) => {
+    try{
+        const sessions =await sessionService.getPublishedSessions(req.user.id);
+        console.log(sessions);
+        return res.status(200).json({
+            message: 'Published sessions list',
+            data: sessions,
+            success: true,
+            error: {}
+        });
+    }
+    catch(err){
+        return res.status(500).json({
+            message: "Internal Server Error",
+            data: {},
+            success: false,
+            error: err
+        });
+    }
+}
 
 module.exports = {
     createSession,
     getSessionById,
     deleteSession,
-    getMySessions
+    getMySessions,
+    getPublishedSessions,
+    toggle
 }

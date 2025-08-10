@@ -3,6 +3,9 @@ import LandingPage from './pages/LandingPage';
 import SignUp from './pages/auth/SignUp';
 import Login from './pages/auth/Login';
 import Dashboard from './pages/home/Dashboard';
+import Sessions from './pages/home/Sessions';
+import Create from './pages/home/Create';
+import ManageSessions from './pages/home/ManageSessions';
 function App() {
   return (
     <>
@@ -14,6 +17,9 @@ function App() {
             <Route path='/signup' element={<SignUp />} />
             <Route path='/login' element={<Login />} />
             <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/sessions' element={<Sessions />} />
+            <Route path='/create' element={<Create />} />
+            <Route path='/managesessions' element={<ManageSessions />} />
           </Routes>
 
         </Router>
